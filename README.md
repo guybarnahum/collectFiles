@@ -61,7 +61,7 @@ This directory is **ready to zip and upload**.
 ## 🚀 Basic Usage
 
 ```bash
-./collect_files.sh -r /path/to/large/tree
+./collectFiles.sh -r /path/to/large/tree
 ```
 
 Defaults:
@@ -74,7 +74,7 @@ Defaults:
 ## 🧪 Dry Run (Recommended First)
 
 ```bash
-./collect_files.sh -r /path/to/large/tree -n
+./collectFiles.sh -r /path/to/large/tree -n
 ```
 
 - No files are copied
@@ -99,7 +99,7 @@ depth
 Then run:
 
 ```bash
-./collect_files.sh -r /path/to/tree
+./collectFiles.sh -r /path/to/tree
 ```
 
 The script will auto-detect `patterns.txt`.
@@ -107,13 +107,13 @@ The script will auto-detect `patterns.txt`.
 ### Option B — Explicit pattern file
 
 ```bash
-./collect_files.sh -r /path/to/tree -F patterns_minimal.txt
+./collectFiles.sh -r /path/to/tree -F patterns_minimal.txt
 ```
 
 ### Option C — Inline patterns
 
 ```bash
-./collect_files.sh -r /path/to/tree -p "distance,range,depth"
+./collectFiles.sh -r /path/to/tree -p "distance,range,depth"
 ```
 
 ---
