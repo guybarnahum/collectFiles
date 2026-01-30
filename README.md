@@ -1,5 +1,15 @@
-# collect_files.sh
+# collectFiles
 
+## 🧩 Why This Exists
+
+LLMs are powerful, but:
+- they don’t need your entire filesystem
+- large repos exceed context limits
+- irrelevant code degrades analysis quality
+
+This tool creates a **focused, structured, auditable slice** of a codebase that an LLM can reason about deeply.
+
+---
 A **forensic filesystem scanner** designed to extract *only the files you care about* from very large trees, while **preserving directory structure**, so the result can be **zipped and uploaded for LLM inspection**.
 
 This tool is optimized for:
@@ -24,23 +34,12 @@ The output:
 
 ## ✨ Key Features
 
-- 🔍 **Pattern-based file selection**
-  - Match by filename substring (case-insensitive)
-  - Patterns from file or CLI
-- 🚫 **GitHub-style ignore rules**
-  - Skip entire subtrees early (`find -prune`)
-  - Supports glob patterns like `GSCRAM*`, `build/`, `**/vendor/**`
-- 🧭 **Live scan progress**
-  - See which file is currently being scanned
-  - No “hung” feeling on deep trees
-- 🧾 **Forensic manifest**
-  - Timestamp, size, SHA256, relative path
-- 🗂 **Tree-preserving output**
-  - Output mirrors the original directory layout
-- 🧪 **Dry-run mode**
-  - See exactly what would be collected before copying
-- 🧠 **LLM-friendly**
-  - Output is intentionally shaped for AI inspection, not humans browsing a repo
+- 🔍 **Pattern-based file selection** Match by filename substring (case-insensitive), Patterns from file or CLI
+- 🚫 **GitHub-style ignore rules**  Skip entire subtrees early (`find -prune`), Supports glob patterns like `Library/*`, `build/`, `**/vendor/**`
+- 🧾 **Forensic manifest** Timestamp, size, SHA256, relative path
+- 🗂 **Tree-preserving output** Output mirrors the original directory layout
+- 🧪 **Dry-run mode** See exactly what would be collected before copying
+- 🧠 **LLM-friendly** Output is intentionally shaped for AI inspection, not humans browsing a repo
 
 ---
 
@@ -141,8 +140,7 @@ third_party
 opencv*
 
 # project-specific
-GSCRAM*
-groundspace
+
 ```
 
 Supported semantics:
@@ -152,18 +150,6 @@ Supported semantics:
 - `**/bar/**` → deep match (find-style)
 
 The scanner **never descends** into ignored subtrees (fast).
-
----
-
-## 🧭 Live Progress
-
-During scanning you’ll see:
-
-```
-Scanning... 18342 src/tracking/targetDistance.cpp
-```
-
-This updates in-place (`\r`) and works even on huge trees.
 
 ---
 
@@ -234,28 +220,6 @@ This avoids over-collecting and keeps LLM context clean.
 
 ---
 
-## 🧩 Why This Exists
-
-LLMs are powerful, but:
-- they don’t need your entire filesystem
-- large repos exceed context limits
-- irrelevant code degrades analysis quality
-
-This tool creates a **focused, structured, auditable slice** of a codebase that an LLM can reason about deeply.
-
----
-
-## ✅ Summary
-
-**collect_files.sh** is a:
-- fast
-- conservative
-- inspection-oriented
-- AI-friendly
-filesystem extraction utility.
-
-It is not a search tool.  
-It is not a backup tool.  
 
 It is a **precision extractor for AI-assisted code analysis**.
 
