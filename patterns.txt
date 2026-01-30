@@ -1,0 +1,7 @@
+#Patterns we look for:
+rangeSensor
+get_range
+softwareDistanceSensor
+depth
+distance
+

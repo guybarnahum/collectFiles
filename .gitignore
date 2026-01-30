@@ -1,0 +1,10 @@
+# runtime output
+output/
+*.zip
+
+# OS noise
+.DS_Store
+
+# editor
+.idea/
+.vscode/

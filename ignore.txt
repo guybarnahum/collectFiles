@@ -1,0 +1,75 @@
+# ===============================
+# Version control / tooling
+# ===============================
+.git
+.git/*
+.cache
+.config
+__pycache__
+.idea
+.vscode
+.DS_Store
+*/Documents/*
+*/Trash/*
+*/Downloads/*
+*/Pictures/*
+
+# ===============================
+# Build & dependency trees
+# ===============================
+node_modules
+node_modules/*
+dist/
+build/
+out/
+target/
+bazel-*
+cmake-build-*
+*.egg-info
+*/lib/*
+*/usr/*
+
+# ===============================
+# Python environments
+# ===============================
+venv
+.venv
+*.venv
+miniconda3
+miniconda3/*
+conda
+pip-cache
+
+# ===============================
+# Browsers / desktop junk
+# ===============================
+.mozilla
+.compiz
+AppData
+www
+
+# ===============================
+# IDEs / SDKs
+# ===============================
+eclipse
+eclipse*
+eclipse-workspace
+plugins
+plugin
+
+# ===============================
+# Third-party & vendor blobs
+# ===============================
+3rdparty
+third_party
+ThirdParty
+thirdparty
+opencv
+opencv*
+CDS3
+sdata
+
+# ===============================
+# Project specific
+# ===============================
+
